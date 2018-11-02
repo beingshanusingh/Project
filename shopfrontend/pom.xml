@@ -14,6 +14,14 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 	</properties>
 	<dependencies>
+		<!-- Linking Backend with FrontEnd -->
+		<dependency>
+		<groupId>com.shanu</groupId>
+		<artifactId>shopbackend</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
+
 		<!-- Java EE for javax.servlet Issue -->
 		<dependency>
 			<groupId>javax</groupId>
