@@ -1,0 +1,38 @@
+<!-- Spring Bean Config Beans, Context, MVC for Assests -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:wf="http://www.springframework.org/schema/webflow-config"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd    
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc.xsd    
+    http://www.springframework.org/schema/webflow-config
+    http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd        
+    ">
+
+
+	<!-- Using Context to know where our all controllers exist -->
+	<context:component-scan
+		base-package="com.shanu.shopfrontend.controller" />
+
+	<!-- To resolve the view -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!-- Look into this folder for the view or web pages -->
+		<property name="prefix" value="/WEB-INF/views/" />
+		<!-- Tag Ends with .JSP -->
+		<property name="suffix" value=".jsp" />
+
+	</bean>
+
+<!-- Loading Assest Static Resource MVC -->
+<mvc:annotation-driven/>
+<mvc:resources location="/assests/" mapping="/resources/**"/>
+
+
+</beans>
