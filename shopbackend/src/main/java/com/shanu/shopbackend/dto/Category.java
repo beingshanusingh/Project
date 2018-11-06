@@ -4,7 +4,7 @@ package com.shanu.shopbackend.dto;
 /*For the Category for the products. Use to send the data to the Database*/
 public class Category {
 	
-	/* Private feild */
+	/* Private field */
 	private int id;
 	private String name;
 	private String description;

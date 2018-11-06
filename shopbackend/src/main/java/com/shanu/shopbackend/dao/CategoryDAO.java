@@ -1,4 +1,4 @@
-package com.shanu.backend.dao;
+package com.shanu.shopbackend.dao;
 
 import java.util.List;
 

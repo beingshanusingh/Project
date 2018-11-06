@@ -20,7 +20,7 @@
 	<context:component-scan base-package="com.shanu.shopfrontend.controller" />
 
 	<!-- To Scan the back end project -->
-	<context:component-scan base-package="com.shanu.backend" />
+	<context:component-scan base-package="com.shanu.shopbackend" />
 
 
 	<!-- To resolve the view -->

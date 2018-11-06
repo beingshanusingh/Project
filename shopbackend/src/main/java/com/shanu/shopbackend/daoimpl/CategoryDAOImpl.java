@@ -1,12 +1,13 @@
- package com.shanu.backend.daoimpl;
+ package com.shanu.shopbackend.daoimpl;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.shanu.backend.dao.CategoryDAO;
+import com.shanu.shopbackend.dao.CategoryDAO;
 import com.shanu.shopbackend.dto.Category;
+
 
 
 
@@ -29,7 +30,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		Category category = new Category();
 		category.setId(1);
 		category.setName("Mobile");
-		category.setDescription("This is a Mobile");
+		category.setDescription(	"This is a Mobile");
 		category.setImageURL("CAT_1.png");
 		/*All the data is added inside the categories ArrayList Index 1*/
 		categories.add(category);
