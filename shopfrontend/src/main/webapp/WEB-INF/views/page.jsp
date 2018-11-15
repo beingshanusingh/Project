@@ -23,6 +23,7 @@
 <!-- GlobalObject JS to fetch the current Location -->
 <script>
 	window.menu = "${title}";
+	window.contextRoot="${contextRoot}";
 </script>
 
 <!-- Bootstrap core CSS -->
@@ -30,6 +31,9 @@
 
 <!-- Bootstrap LUX Theme CSS From Bootswatch -->
 <link href="${css}/lux.css" rel="stylesheet">
+
+<!-- Bootstrap LUX Theme CSS From Bootswatch -->
+<link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <link href="${css}/shop.css" rel="stylesheet">
@@ -79,6 +83,14 @@
 		<!-- Bootstrap core JavaScript -->
 		<script src="${js}/jquery.min.js"></script>
 		<script src="${js}/bootstrap.bundle.min.js"></script>
+		
+		<!-- For DataTable -->
+		<script src="${js}/jquery.dataTables.js"></script>
+		
+		<!-- For DataTable -->
+		<script src="${js}/dataTables.bootstrap.js"></script>
+		
+		
 
 		<!-- Custom JS -->
 		<script src="${js}/myapp.js"></script>

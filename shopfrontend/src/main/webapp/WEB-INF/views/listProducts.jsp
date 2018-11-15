@@ -1,44 +1,69 @@
 <div class="container">
-
 	<div class="row">
 
-
-		<!-- To display Sidebar -->
+		<!-- For Sidebar -->
 		<div class="col-md-3">
-
 			<%@include file="./shared/sidebar.jsp"%>
-
 		</div>
 
 
-		<!-- To Display All Products -->
 		<div class="col-md-9">
-
 			<!-- Breadcrumb Class -->
-			<div class="row">
-				<div class="col-lg-12">
+			<div class="row bg-dark">
+				<div class="col-md-12">
 					<c:if test="${userClickAllProducts == true}">
+					<script>
+					window.category=" ";
+					</script>
 						<ol class="breadcrumb">
 							<li><a href="${contextRoot}/home">Home</a></li>
-							<li class="active">All Products</li>
+							<li class="active">/ All Products</li>
 						</ol>
 					</c:if>
 					<!-- Category -->
 					<c:if test="${userClickCategoryProducts == true}">
+					<script>
+					window.categoryId="${category.id}";
+					</script>
 						<ol class="breadcrumb">
 							<li><a href="${contextRoot}/home">Home</a></li>
-							<li class="active">Category</li>
+							<li class="active">/ Category</li>
 							<!-- It is passed by the second method created in Interface by pagecontroller.java  -->
-							<li class="active">${category.name}</li>
+							<li class="active">/ ${category.name}</li>
 						</ol>
 					</c:if>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-9">
+					<div class="table-responsive" >
+						<table class="table table-striped table-dark" id="productListTable">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Brand</th>
+									<th>Price</th>
+									<th>Quantity</th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<th>Name</th>
+									<th>Brand</th>
+									<th>Price</th>
+									<th>Quantity</th>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
 
 				</div>
 			</div>
-			<!-- row breadcrumb closed -->
 		</div>
-		<!-- Display Closed -->
+
+
+
 	</div>
-	<!-- Main Row Closed -->
 </div>
-<!-- MainContainer Closed -->
