@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.shanu.shopbackend.dao.CategoryDAO;
+import com.shanu.shopbackend.dao.ProductDAO;
 import com.shanu.shopbackend.dto.Category;
+import com.shanu.shopbackend.dto.Product;
 
 @Controller
 public class PageController {
@@ -18,6 +20,9 @@ public class PageController {
 	 *  @Repositry("addCategoryList") and use the method list()*/
 	@Autowired
 	private CategoryDAO addCategoryList;
+	
+	@Autowired
+	private ProductDAO productDAO;	
 	
 	
 	// Page Mapping for HomePage
@@ -78,6 +83,28 @@ public class PageController {
 			return mv;
 		} 	
 	
+		/*
+		 * View Single Product on Shop Button View Product
+		 * */
+		
+		@RequestMapping(value="/show/{id}/product")
+			public ModelAndView showIdProduct(@PathVariable("id") int id) {
+			
+			ModelAndView mv = new ModelAndView("page");
+			Product product = productDAO.get(id);
+			/**
+			 * Update the views in the database
+			 * To Count the Views */
+			product.setViews(product.getViews()+1);
+			productDAO.update(product);
+		
+			mv.addObject("title",product.getName());
+			mv.addObject("product",product);
+			mv.addObject("userClickShowProduct",true);
+			
+			return mv;
+			
+		}
 	
 	} 
 	

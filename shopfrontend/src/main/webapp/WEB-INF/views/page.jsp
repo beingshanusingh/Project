@@ -47,6 +47,7 @@
 		<%@include file="./shared/navbar.jsp"%>
 
 
+
 		<!-- Page Content -->
 		<div class="content">
 
@@ -72,6 +73,11 @@
 			<!-- Products -->
 			<c:if test="${userClickCategoryProducts == true}">
 				<%@include file="listProducts.jsp"%>
+			</c:if>
+			
+			<!--Click Show Products  -->
+			<c:if test="${userClickShowProduct == true}">
+				<%@include file="singleProduct.jsp"%>
 			</c:if>
 
 		</div>
