@@ -63,21 +63,31 @@ $(function() {
 								}
 							},
 							{
-								data : 'quantity'
+								data : 'quantity',
+								mRender(data,type,row){
+									if(data < 1){
+										return '<span style="color:red;">Out Of Stock</span>';
+									}else{
+										return data;
+									}
+									
+								}
 							},
 							{
 								data : 'id',
 								bSortable : false,
 								mRender : function(data, type, row) {
 									var str = '';
-									str += '<a href="' + window.contextRoot
-											+ '/show/' + data
-											+ '/product">View Product </a>';
-									str += '<a href="' + window.contextRoot
-											+ '/cart/add/' + data
-											+ '/product">Buy</a>';
+									str += '<a href="' + window.contextRoot+ '/show/' + data + '/product" class="btn btn-info">View Product </a>';
+									
+									if(row.quantity < 1){
+										str += '<a href="javascript:void(0)" class="btn btn-sucsess disabled">Buy</a>';
+										return str;
+									}else{
+										str += '<a href="' + window.contextRoot + '/cart/add/' + data + '/product" class="btn btn-success" >Buy</a>';
+										return str;
+									}
 									return str;
-
 								}
 							} ]
 				});
